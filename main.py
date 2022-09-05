@@ -1,11 +1,3 @@
-# Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved
-# You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
-# ##Credits - [telegraph-uploader-bot] (https://github.com/sanila2007/telegraph-uploader-bot)
-
-# Read GNU General Public License v3.0: https://github.com/sanila2007/telegraph-uploader-bot/blob/mai/LICENSE
-# Don't forget to follow github.com/sanila2007 because I'm doing these things for free and open source
-# Star, fork, enjoy!
-
 import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -19,42 +11,77 @@ bot = Client(
     bot_token=Config.BOT_TOKEN
 )
 
-INLINE_SELECT = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton("Github🤩", url="https://github.com/sanila2007/telegraph-uploader-bot"),
-            InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot")
-        ],
-        [
-            InlineKeyboardButton("Join Channel🌐", url="https://t.me/telsabots")
-        ]
-    ]
-)
-
-ERROR_BUTTON = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot"),
-            InlineKeyboardButton("Learn Boot🙂", url="https://t.me/sanilaassistant_bot")
-        ]
-    ]
-)
-
 
 @bot.on_message(filters.command("start") & filters.private)
-async def start(bot, message):
-    text = f"Hello {message.from_user.first_name}!\n\nWelcome to the Telegraph uploader bot.\nYou can send me any " \
-           f"image, video, animation and I will upload it to telegraph and send you a generated link. But the file must be LESS THAN 5MB!!\n\n" \
-           f"<a href=https://t.me/sanilaassistant_bot>Feel free to leave a feedback</a>"
-    reply_markup = INLINE_SELECT
-    await message.reply(
-        text=text,
-        reply_markup=reply_markup,
-        disable_web_page_preview=True)
+async def start(client, message):
+    await message.reply_photo(
+        photo=random.choice(PICS)
+        caption=f"""
+Hello 👋 {message.from_user.first_name}
+Nice to meet you 🙌
 
+I am a powerful Telegraph Bot 🔥
 
-## UPLOAD PHOTOS
+Hit /help to know my features 😍
+"""
+        reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("DEVELOPER 👨‍💻", url="https://t.me/MR_THOR_01")
+            ],[
+            InlineKeyboardButton("UPDATES 📢", url="https://t.me/DevilBotzz"),
+            InlineKeyboardButton("SUPPORT 👥", url="https://t.me/DevilBotzzSupport")
+            ]]
+            )
+        )
+            
+@bot.on_message(filters.command("start") & filters.private)
+async def start(client, message):
+    await message.reply_photo(
+        photo=random.choice(PICS)
+        caption=f"""
+Hello 👋 {message.from_user.first_name}
 
+/start Check I am Alive
+
+/help To get this message
+
+/about About Me
+
+Send a file (image, video, sticker) under 5 MB
+I can convert that file into Telegraph link 🔥
+
+Let's Enjoy 🎉
+"""
+        reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("UPDATES 📢", url="https://t.me/DevilBotzz"),
+            InlineKeyboardButton("SUPPORT 👥", url="https://t.me/DevilBotzzSupport")
+            ]]
+            )
+        )
+    
+@bot.on_message(filters.command("start") & filters.private)
+async def start(client, message):
+    await message.reply_photo(
+        photo=random.choice(PICS)
+        caption="""
+⭕ BOT NAME  : TELEGRAPH BOT
+
+⭕ CREATOR   : ⚡️GOD OF THUNDER⚡️
+
+⭕ LANGUAGE  : PYTHON3
+
+⭕ FRAMEWORK : PYROGRAM
+
+⭕ SERVER    : RAILWAY
+
+⭕ COUNTRY   : INDIA
+"""
+        reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("UPDATES 📢", url="https://t.me/DevilBotzz"),
+            InlineKeyboardButton("SUPPORT 👥", url="https://t.me/DevilBotzzSupport")
+            ]]
+            )
+        )
+    
 @bot.on_message(filters.photo & filters.private)
 async def photo_upload(bot, message):
     msg = await message.reply("Uploading", quote=True)
@@ -64,17 +91,9 @@ async def photo_upload(bot, message):
     try:
         link = upload_file(download_path)
         generated_link = "https://telegra.ph" + "".join(link)
-
-        IN_BUTTON = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Github🤩", url="https://github.com/sanila2007"),
-                    InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot")
-                ],
-                [
-                    InlineKeyboardButton("Web Preview🌐", url=generated_link)
-                ]
-            ]
+        reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ]]
         )
     except:
         await msg.edit_text(
@@ -84,13 +103,13 @@ async def photo_upload(bot, message):
         t = await msg.edit_text(generated_link, disable_web_page_preview=True)
         await t.edit_text(
             f"Link - `{generated_link} `\n\n<a href=https://t.me/sanilaassistant_bot>Feel free to leave a feedback</a>",
-            reply_markup=IN_BUTTON,
-            disable_web_page_preview=True)
+            reply_markup= InlineKeyboardMarkup( [[
+                InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+                ]]
+            )
     finally:
         os.remove(download_path)
 
-
-## UPLOAD VIDEOS
 
 @bot.on_message(filters.video & filters.private)
 async def video_upload(bot, message):
@@ -99,17 +118,11 @@ async def video_upload(bot, message):
     try:
         link = upload_file(download_path)
         generated_Link = "https://telegra.ph" + "".join(link)
-
-        IN_BUTTON = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Github🤩", url="https://github.com/sanila2007"),
-                    InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot")
-                ],
-                [
-                    InlineKeyboardButton("Web Preview🌐", url=generated_Link)
-                ]
-            ]
+        reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
         )
     except:
         await msg.edit_text(
@@ -118,14 +131,16 @@ async def video_upload(bot, message):
     else:
         t = await msg.edit_text(generated_Link, disable_web_page_preview=True)
         await t.edit_text(
-            f"Link - `{generated_Link} `\n\n<a href=https://t.me/sanilaassistant_bot>Feel free to leave a feedback</a>",
-            reply_markup=IN_BUTTON,
-            disable_web_page_preview=True)
+            f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
+        )
     finally:
         os.remove(download_path)
 
-
-## UPLOAD GIF
 
 @bot.on_message(filters.animation & filters.private)
 async def animation_upload(bot, message):
@@ -135,16 +150,11 @@ async def animation_upload(bot, message):
         link = upload_file(download_path)
         generated_link = "https://telegra.ph" + "".join(link)
 
-        IN_BUTTON = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Github🤩", url="https://github.com/sanila2007"),
-                    InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot")
-                ],
-                [
-                    InlineKeyboardButton("Web Preview🌐", url=generated_link)
-                ]
-            ]
+        reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
         )
     except:
         await msg.edit_text(
@@ -154,9 +164,13 @@ async def animation_upload(bot, message):
     else:
         t = await msg.edit_text(generated_link, disable_web_page_preview=True)
         await t.edit_text(
-            f"Link - `{generated_link} `\n\n<a href=https://t.me/sanilaassistant_bot>Feel free to leave a feedback</a>",
-            reply_markup=IN_BUTTON,
-            disable_web_page_preview=True)
+            f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
+        )
     finally:
         os.remove(download_path)
 
@@ -170,16 +184,11 @@ async def animation_upload_groups(bot, message):
     try:
         link = upload_file(download_path)
         generated_link = "https://telegra.ph" + "".join(link)
-        IN_BUTTON = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Github🤩", url="https://github.com/sanila2007"),
-                    InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot")
-                ],
-                [
-                    InlineKeyboardButton("Web Preview🌐", url=generated_link)
-                ]
-            ]
+        reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
         )
     except:
         await msg.edit_text(
@@ -189,9 +198,13 @@ async def animation_upload_groups(bot, message):
     else:
         t = await msg.edit_text(generated_link, disable_web_page_preview=True)
         await t.edit_text(
-            f"Link - `{generated_link} `\n\n<a href=https://t.me/sanilaassistant_bot>Feel free to leave a feedback</a>",
-            reply_markup=IN_BUTTON,
-            disable_web_page_preview=True)
+            f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
+        )
     finally:
         os.remove(download_path)
 
@@ -205,28 +218,32 @@ async def photo_upload_groups(bot, message):
     try:
         link = upload_file(download_path)
         generated_link = "https://telegra.ph" + "".join(link)
-        IN_BUTTON = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Github🤩", url="https://github.com/sanila2007"),
-                    InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot")
-                ],
-                [
-                    InlineKeyboardButton("Web Preview🌐", url=generated_link)
-                ]
-            ]
+        f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
         )
     except:
         await msg.edit_text(
-            "File must be less than 5mb, please try another file or <a href=https://t.me/sanilaassistant_bot>LEARN THIS BOT FIRST!</a>",
-            reply_markup=INLINE_SELECT,
-            disable_web_page_preview=True)
+            "File must be less than 5mb, please try another file or <a href=https://t.me/DevilBotzzSupport>LEARN THIS BOT FIRST!</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
+        )
     else:
         t = await msg.edit_text(generated_link, disable_web_page_preview=True)
         await t.edit_text(
-            f"Link - `{generated_link} `\n\n<a href=https://t.me/sanilaassistant_bot>Feel free to leave a feedback</a>",
-            reply_markup=IN_BUTTON,
-            disable_web_page_preview=True)
+            f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
+        )
     finally:
         os.remove(download_path)
 
@@ -240,28 +257,32 @@ async def video_upload_group(bot, message):
     try:
         link = upload_file(download_path)
         generated_link = "https://telegra.ph" + "".join(link)
-        IN_BUTTON = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Github🤩", url="https://github.com/sanila2007"),
-                    InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot")
-                ],
-                [
-                    InlineKeyboardButton("Web Preview🌐", url=generated_link)
-                ]
-            ]
+        f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
         )
     except:
         await msg.edit_text(
-            "File must be less than 5mb, please try another file or <a href=https://t.me/sanilaassistant_bot>LEARN THIS BOT FIRST!</a>",
-            reply_markup=INLINE_SELECT,
-            disable_web_page_preview=True)
+            "File must be less than 5mb, please try another file or <a href=https://t.me/DevilBotzzSupport>LEARN THIS BOT FIRST!</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
+        )
     else:
         t = await msg.edit_text(generated_link, disable_web_page_preview=True)
         await t.edit_text(
-            f"Link - `{generated_link} `\n\n<a href=https://t.me/sanilaassistant_bot>Feel free to leave a feedback</a>",
-            reply_markup=IN_BUTTON,
-            disable_web_page_preview=True)
+            f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
+        )
     finally:
         os.remove(download_path)
 
@@ -276,28 +297,29 @@ async def sticker_upload(bot, message):
     try:
         link = upload_file(download_path)
         generated_link = "https://telegra.ph" + "".join(link)
-        IN_BUTTON = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Github🤩", url="https://github.com/sanila2007"),
-                    InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot")
-                ],
-                [
-                    InlineKeyboardButton("Web Preview🌐", url=generated_link)
-                ]
-            ]
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
         )
     except Exception as a:
         await msg.edit_text(
             f"❌ This sticker was unable to upload. Please try another file or <a href=https://t.me/sanilaassistant_bot>LEARN THIS BOT FIRST!</a>\n\n<i>Caused error - {a}</i>",
-            reply_markup=INLINE_SELECT,
-            disable_web_page_preview=True)
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ]]
+        )
     else:
         t = await msg.edit_text(generated_link, disable_web_page_preview=True)
         await t.edit_text(
-            f"Link - `{generated_link} `\n\n<a href=https://t.me/sanilaassistant_bot>Feel free to leave a feedback</a>",
-            reply_markup=IN_BUTTON,
-            disable_web_page_preview=True)
+            f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
+        )
     finally:
         os.remove(download_path)
 
@@ -311,32 +333,33 @@ async def sticker_upload_group(bot, message):
     try:
         link = upload_file(download_path)
         generated_link = "https://telegra.ph" + "".join(link)
-        IN_BUTTON = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Github🤩", url="https://github.com/sanila2007"),
-                    InlineKeyboardButton("Report Bugs🤖", url="https://t.me/sanilaassistant_bot")
-                ],
-                [
-                    InlineKeyboardButton("Web Preview🌐", url=generated_link)
-                ]
-            ]
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
         )
     except Exception as a:
         await msg.edit_text(
             f"❌ This sticker was unable to upload. Please try another file or <a href=https://t.me/sanilaassistant_bot>LEARN THIS BOT FIRST!</a>\n\n<i>Caused error - {a}</i>",
-            reply_markup=INLINE_SELECT,
-            disable_web_page_preview=True)
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ]]
+        )
     else:
         t = await msg.edit_text(generated_link, disable_web_page_preview=True)
         await t.edit_text(
-            f"Link - `{generated_link} `\n\n<a href=https://t.me/sanilaassistant_bot>Feel free to leave a feedback</a>",
-            reply_markup=IN_BUTTON,
-            disable_web_page_preview=True)
+            f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
+            reply_markup= InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
+            ],[
+            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
+            ]]
+        )
     finally:
         os.remove(download_path)
 
 
-print("All good")
+print("I AM ALIVE 🔥")
 
 bot.run()
