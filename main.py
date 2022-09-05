@@ -1,4 +1,5 @@
 import os
+import random
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telegraph import upload_file
@@ -10,6 +11,19 @@ bot = Client(
     api_hash=Config.API_HASH,
     bot_token=Config.BOT_TOKEN
 )
+
+PICS = [
+ "https://telegra.ph/file/09b2cb624771a83dd4983.jpg",
+ "https://telegra.ph/file/a720f26abeb6bd9adc05b.jpg",
+ "https://telegra.ph/file/c1769c1b965f74dc733a5.jpg",
+ "https://telegra.ph/file/edfe00b950eea33361d25.jpg",
+ "https://telegra.ph/file/2005d7e440130620378fa.jpg",
+ "https://telegra.ph/file/843ca93b7b817ca42aaab.jpg",
+ "https://telegra.ph/file/a1e27dcbb467ad610aa0e.jpg",
+ "https://telegra.ph/file/c19b77e8644312a50b32c.jpg",
+ "https://telegra.ph/file/db4da737589be75593629.jpg",
+ "https://telegra.ph/file/edb27ed98b9c9275db431.jpg",
+]
 
 
 @bot.on_message(filters.command("start") & filters.private)
@@ -63,7 +77,7 @@ async def start(client, message):
     await message.reply_photo(
         photo=random.choice(PICS)
         caption="""
-⭕ BOT NAME  : TELEGRAPH BOT
+⭕ BOT NAME  : SPIDER MAN
 
 ⭕ CREATOR   : ⚡️GOD OF THUNDER⚡️
 
