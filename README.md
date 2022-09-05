@@ -13,7 +13,7 @@
   </a>
   
   <a href="https://github.com/BRUCEBANNER00/DevilTelegraphBot/fork">
-    <img src="https://img.shields.io/github/forks/DevilTelegraphBot?label=Fork&style=social">
+    <img src="https://img.shields.io/github/forks/BRUCEBANNER00/DevilTelegraphBot?label=Fork&style=social">
 
   </a>  
 </p>
