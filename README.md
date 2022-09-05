@@ -1,6 +1,6 @@
-[![DevilTelegraphBot](https://telegra.ph/file/28a1c01879700cbbd34cb.jpg)(https://github.com/BRUCEBANNER00/DevilTelegraphBot)
+# DevilTelegraphBot
 
-
+[![MADE WITH PYTHON](https://img.shields.io/python.org?style=flat-square&color=orange)]
 [![Stars](https://img.shields.io/github/stars/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=yellow)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/stargazers)
 [![Forks](https://img.shields.io/github/forks/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=orange)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/fork)
 [![Size](https://img.shields.io/github/repo-size/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=green)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/)   
