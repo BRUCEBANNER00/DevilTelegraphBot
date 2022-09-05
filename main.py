@@ -9,8 +9,9 @@ bot = Client(
     "bot",
     api_id=Config.API_ID,
     api_hash=Config.API_HASH,
-    bot_token=Config.BOT_TOKEN
-    bot_name=Config.BOT_NAME
+    bot_token=Config.BOT_TOKEN,
+    bot_name=Config.BOT_NAME,
+    force_channel=Config.FORCE_CHANNEL
 )
 
 PICS = [
@@ -29,6 +30,21 @@ PICS = [
 
 @bot.on_message(filters.command("start") & filters.private)
 async def start(client, message):
+    if force_channel:
+        try:
+            user = await client.get_chat_member(force_channel, message.from_user.id)
+            if user.status == "kicked out":
+                await message.reply_text("You Are Banned")
+                return
+        except UserNotParticipant :
+            await message.reply_text(
+                text="𝙔𝙊𝙐 𝙃𝘼𝙑𝙀 𝙏𝙊 𝙎𝙐𝘽𝙎𝘾𝙍𝙄𝘽𝙀 𝙈𝙔 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 𝙏𝙊 𝙐𝙎𝙀 𝙏𝙃𝙄𝙎 𝘽𝙊𝙏 😁",
+                reply_markup=InlineKeyboardMarkup( [[
+                 InlineKeyboardButton("⚡️𝙐𝙋𝘿𝘼𝙏𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇⚡️", url=f"t.me/{Config.FORCE_CHANNEL}")
+                 ]]
+                 )
+            )
+            return
     await message.reply_photo(
         photo=random.choice(PICS)
         caption=f"""
