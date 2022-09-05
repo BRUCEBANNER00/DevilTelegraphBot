@@ -1,4 +1,4 @@
-![DevilTelegraphBot](https://telegra.ph/file/28a1c01879700cbbd34cb.jpg(https://github.com/BRUCEBANNER00/DevilTelegraphBot)
+[DevilTelegraphBot](https://telegra.ph/file/28a1c01879700cbbd34cb.jpg)(https://github.com/BRUCEBANNER00/DevilTelegraphBot)
 
 
 [![Stars](https://img.shields.io/github/stars/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=yellow)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/stargazers)
