@@ -1,8 +1,8 @@
 {
-  "name": "telegraph-uploader-bot",
-  "description":"You can use this bot upload images, videos and animations to the telegraph.",
-  "repository": "https://github.com/sanila2007/telegraph-uploader-bot",
-  "logo": "https://telegra.ph/file/7503f1b9e71af2b815cf2.jpg",
+  "name": "DevilTelegraphBot",
+  "description":"You can use this bot for get telegraph links.",
+  "repository": "https://github.com/BRUCEBANNER00/DevilTelegraphBot",
+  "logo": "https://telegra.ph/file/3cd69915641c4c095b40d.jpg",
   "keywords": [
     "telegraph bot",
     "images",
@@ -23,7 +23,18 @@
         "BOT_TOKEN": {
             "description": "Get from Telegram's @BotFather",
             "required": true
-        }
+        },
+        "BOT_NAME": {
+            "description": "Bot's username from @BotFather",
+            "required": true
+        },
+        "FORCE_CHANNEL": {
+            "description": "Your Telegram channel's ID",
+            "required": false
+        },
+        "PICS": {
+            "description": "Add some Telegraph links of pictures",
+            "required": false
     },
     "formation": {
     "worker": {
