@@ -1,5 +1,19 @@
 # DevilTelegraphBot
-A Simple Bot that convert images, videos, stickers into telegraph link 🔥
+
+<p align="center">
+  <img src="assets/logo.jpg">
+</p>
+<h1 align="center">
+  <b>Telegraph Bot</b>
+</h1>
+
+
+[![Stars](https://img.shields.io/github/stars/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=yellow)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/stargazers)
+[![Forks](https://img.shields.io/github/forks/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=orange)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/fork)
+[![Size](https://img.shields.io/github/repo-size/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=green)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/)   
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/BRUCEBANNER00/DevilTelegraphBot)   
+[![Contributors](https://img.shields.io/github/contributors/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=green)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/graphs/contributors)
+[![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/blob/main/LICENSE)
 
 
 ## Deploy on Railway
