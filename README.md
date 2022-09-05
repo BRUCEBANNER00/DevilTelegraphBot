@@ -1,12 +1,29 @@
 # DevilTelegraphBot
 
-[![MADE WITH PYTHON](https://img.shields.io/python.org?style=flat-square&color=orange)]
-[![Stars](https://img.shields.io/github/stars/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=yellow)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/stargazers)
-[![Forks](https://img.shields.io/github/forks/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=orange)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/fork)
-[![Size](https://img.shields.io/github/repo-size/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=green)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/)   
-[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/BRUCEBANNER00/DevilTelegraphBot)   
-[![Contributors](https://img.shields.io/github/contributors/BRUCEBANNER00/DevilTelegraphBot?style=flat-square&color=green)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/graphs/contributors)
-[![License](https://img.shields.io/badge/License-MIT-red)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/blob/main/LICENSE)
+<p align="center">
+  <a href="https://www.python.org">
+    <img src="http://ForTheBadge.com/images/badges/made-with-python.svg">
+
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/BRUCEBANNER00/DevilTelegraphBot/stargazers">
+    <img src="https://img.shields.io/github/stars/BRUCEBANNER00/DevilTelegraphBot?style=social">
+
+  </a>
+  
+  <a href="https://github.com/BRUCEBANNER00/DevilTelegraphBot/fork">
+    <img src="https://img.shields.io/github/forks/DevilTelegraphBot?label=Fork&style=social">
+
+  </a>  
+</p>
+
+[![DevilBotzz](https://img.shields.io/badge/DevilBotzz-Channel-orange?style=for-the-badge&logo=telegram)](https://telegram.dog/DevilBotzz)  
+ㅤㅤㅤㅤㅤㅤㅤ  
+[![DevilBotzz](https://img.shields.io/badge/DevilBotzz-Support-red?style=flat&logo=telegram)](https://telegram.dog/DevilBotzzSupport)  
+ㅤㅤㅤㅤㅤㅤㅤ  
+[![MIT license](https://img.shields.io/badge/License-MIT-blue?style=flat)](https://github.com/BRUCEBANNER00/DevilTelegraphBot/blob/main/LICENSE)  
+[![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/BRUCEBANNER00/DevilTelegraphBot)
 
 
 ## Deploy on Railway
